@@ -1,0 +1,16 @@
+; Python from RandomApp
+
+username = input("Entrez votre nom d'utilisateur : ")
+password = input("Entrez votre mot de passe : ")
+query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+
+; CVE-2024-23119 : PHP code from Centreon
+; formGraphTemplate.php :  insertGraphTemplateInDB() -> insertGraphTemplate()
+
+// Simplified Code 
+function insertGraphTemplate($data) {
+    $query = "INSERT INTO giv_graphs_template (name, lower_limit, upper_limit, size_to_max, default_tpl1, scaled)
+              VALUES ('{$data['name']}', {$data['lower_limit']},{$data['upper_limit']}, {$data['size_to_max']},'{$data['default_tpl1']}', {$data['scaled']})";
+    // Exécution de la requête
+    mysqli_query($conn, $query);
+}
