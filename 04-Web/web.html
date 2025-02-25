@@ -1,0 +1,12 @@
+<form id="xss-form">
+    <input type="text" id="user-input">
+    <button type="button" onclick="submitForm()">Envoyer</button>
+</form>
+<div id="output"></div>
+
+<script>
+    function submitForm() {
+        const userInput = document.getElementById('user-input').value;
+        document.getElementById('output').innerHTML = userInput; 
+    }
+</script>
