@@ -1,12 +1,29 @@
-<form id="xss-form">
-    <input type="text" id="user-input">
-    <button type="button" onclick="submitForm()">Envoyer</button>
-</form>
-<div id="output"></div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page minimale</title>
+</head>
+<body>
+	<h1>Bonjour, monde :)</h1>
 
-<script>
-    function submitForm() {
-        const userInput = document.getElementById('user-input').value;
-        document.getElementById('output').innerHTML = userInput; 
-    }
-</script>
+	<p>Un formulaire<br></p>
+	<form id="web-form">
+	    <input type="text" id="user-input">
+	    <button type="button" onclick="submitForm()">Envoyer</button>
+	</form>
+
+	<div id="output"></div>
+
+	<p>Le résultat<br></p>
+	<script>
+	    function submitForm() {
+		const userInput = document.getElementById('user-input').value;
+		document.getElementById('output').innerHTML = userInput; 
+	    }
+	</script>
+
+</body>
+</html>
+
