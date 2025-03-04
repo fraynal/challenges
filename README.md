@@ -2,8 +2,10 @@
 
 Small cyber challenges for fun and no profit
 
+05-zip
 
-04-Web
+04-Web-innerHTML
+https://www.linkedin.com/posts/fredraynal_ce-challenge-est-simple-ce-code-contient-activity-7300420092171857920-sdjw/?
 
 03-Crypto-ECDSA
 https://www.linkedin.com/feed/update/urn:li:activity:7297883384607825920/
