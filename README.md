@@ -3,6 +3,7 @@
 Small cyber challenges for fun and no profit
 
 07-int
+https://www.linkedin.com/feed/update/urn:li:activity:7308030238104379392/
 
 06-get-elt-safe
 https://www.linkedin.com/posts/fredraynal_faille-sans-exploit-nest-rien-sun-activity-7305493515822616576-QyQB?
