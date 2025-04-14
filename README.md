@@ -2,6 +2,16 @@
 
 Small cyber challenges for fun and no profit
 
+
+10-crackaddr
+
+
+09-toctou
+https://www.linkedin.com/posts/fredraynal_tout-le-monde-veut-aller-vite-peu-veulent-activity-7313088557047271424-tr4s?
+
+08-login
+https://www.linkedin.com/posts/fredraynal_challenge-la-révolution-crypto-quantique-activity-7310566940727537664-DDkn/
+
 07-int
 https://www.linkedin.com/feed/update/urn:li:activity:7308030238104379392/
 
