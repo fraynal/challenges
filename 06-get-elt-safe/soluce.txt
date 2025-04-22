@@ -1,0 +1,26 @@
+# Comprendre l'organisation de la mémoire
+
+L'objectif est de lire des données situées après arr[] dans la mémoire, notamment secret[].
+
++----------------------+
+|  arr[0]             |  <- arr[0]
+|  arr[1]             |
+|  arr[2]             |
+|  ...                |
+|  arr[7]             |  <- arr[7] (dernier élément valide)
++----------------------+
+|  secret[0]          |  <- secret[0] (début du secret)
+|  secret[1]          |
+|  secret[2]          |
+|  ...                |
+|  secret[7]          |  <- secret[7] (fin du secret)
++----------------------+
+
+Si on lit arr[8], on accède à secret[0], si on lit arr[9], on accède à secret[1], etc.
+
+# Dépasser les limites du tableau
+Le programme demande un index à l'utilisateur via std::cin >> index;.
+Si l'utilisateur entre un index >= 8, la fonction get_element_safe() retourne nullptr, ce qui entraîne un segfault.
+Mais si get_element_safe() ne vérifiait pas correctement ou si on forçait un index légèrement hors limites (8, 9, 10...), on pourrait lire le secret.
+
+

