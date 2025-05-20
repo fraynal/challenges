@@ -1,1 +1,8 @@
-x2.yaml
+dev: |
+  username: alice
+  role: developer
+
+prod: |
+  username: bob
+  role: admin
+
