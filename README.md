@@ -2,9 +2,13 @@
 
 Small cyber challenges for fun and no profit
 
+12-yaml
+
+11-alarm
+https://www.linkedin.com/posts/fredraynal_ce-challenge-prend-du-temps-vous-%C3%AAtes-activity-7320709034217529348-pPzF?
 
 10-crackaddr
-
+https://www.linkedin.com/posts/fredraynal_cve-2002-1337-1-bug-3-challenges-pour-activity-7318162008573399040-lZMT/
 
 09-toctou
 https://www.linkedin.com/posts/fredraynal_tout-le-monde-veut-aller-vite-peu-veulent-activity-7313088557047271424-tr4s?
